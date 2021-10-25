@@ -65,15 +65,10 @@ public class Item {
         this.itemPrice = itemPrice;
     }
 
+
+
     @Override
     public String toString() {
-        return "Item{" +
-                "itemID=" + itemID +
-                ", itemStore=" + itemStore +
-                ", itemName='" + itemName + '\'' +
-                ", itemType='" + itemType + '\'' +
-                ", itemPictureURL='" + itemPictureURL + '\'' +
-                ", itemPrice=" + itemPrice +
-                '}';
+        return "Varen heter " + getItemName() + " og er av typen " + getItemType() + ". Denne varen koster: " + getItemPrice();
     }
 }

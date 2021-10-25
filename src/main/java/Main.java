@@ -1,7 +1,10 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Item;
 import model.Store;
 import model.User;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,9 +34,23 @@ public class Main {
         String itemPrice = sc.next();
         double newItemPrice = Double.parseDouble(itemPrice);
         items.add(new Item(newItemID,newItemStore,ItemName,itemType, pictureURL,newItemPrice));
+        writeToJson("items.json", items);
 
         System.out.println(items);
 
 
+
+
+    }
+    public static void writeToJson(String filename, List<Item> items) {
+        try {
+            File file = new File(filename);
+            ObjectMapper objectMapper = new ObjectMapper();
+
+
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, items);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

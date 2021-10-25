@@ -43,10 +43,7 @@ public class Store {
 
     @Override
     public String toString() {
-        return "Store{" +
-                "storeID=" + storeID +
-                ", storeName='" + storeName + '\'' +
-                ", items=" + items +
-                '}';
+        return "Butikken heter " + getStoreName() + " og har en liste med varer som er " + getItems();
     }
+    //return String.format("%s has %d planets that revolve around the star %s", name, planets.size(), centerStar.getName());
 }

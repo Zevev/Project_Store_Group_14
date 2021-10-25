@@ -1,0 +1,15 @@
+[ {
+  "itemID" : 1,
+  "itemStore" : 1,
+  "itemName" : "Kola",
+  "itemType" : "Vase",
+  "itemPictureURL" : "FintBildet",
+  "itemPrice" : 299.99
+}, {
+  "itemID" : 4,
+  "itemStore" : 2,
+  "itemName" : "Hei",
+  "itemType" : "Hadet",
+  "itemPictureURL" : "Bildet",
+  "itemPrice" : 4.99
+} ]
