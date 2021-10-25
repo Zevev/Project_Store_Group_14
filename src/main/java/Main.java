@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static repository.SiteRepository.readFromJSON;
+
 public class Main {
     public static void main(String[] args) {
         List<Item> items = new ArrayList<>();
@@ -57,5 +59,21 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static Store getAStore(String storeName) {
+        for(Store store : getAllStores()){
+            if(store.getStoreName().equals(storeName)) {
+                return store;
+            }
+        }
+        return null;
+    }
+    public static List<Store> getAllStores() {
+        return readFromJSON("Stores.JSON");
+    }
+
+    public static List<Item> items(String storeName) {
+        return getAStore(storeName).getItems();
+
     }
 }

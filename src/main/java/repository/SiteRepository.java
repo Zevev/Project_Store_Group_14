@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SiteRepository implements ISiteRepository {
 
-    public List<Store> readFromJSON(String filnavn) {
+    public static List<Store> readFromJSON(String filnavn) {
         List<Store> stores = new ArrayList<>();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -63,10 +63,39 @@ public class SiteRepository implements ISiteRepository {
     }
 
     @Override
-    public List<Item> items(String storeName) {
+    public  List<Item> items(String storeName) {
         return getAStore(storeName).getItems();
 
     }
+
+    @Override
+    public List<Item> getAllItems() {
+        List<Store> stores = new ArrayList<>(getAllStores());
+        List<Item> allItems = new ArrayList<>();
+        for (Store stores1 : stores){
+            List<Item>currentItemList = items(stores1.getStoreName());
+            for(Item items : currentItemList){
+                allItems.add(items);
+            }
+        }
+        return allItems;
+    }
+
+    @Override
+    public Item getAItemWithoutStoreName(String itemName) {
+        List<Store> stores = new ArrayList<>(getAllStores());
+        List<Item> allItems = new ArrayList<>();
+        for (Store stores1 : stores){
+            List<Item>currentItemList = items(stores1.getStoreName());
+            for(Item items : currentItemList){
+                if (items.getItemName().equals(itemName)){
+                    return items;
+                }
+            }
+        }
+        return null;
+    }
+
 
     @Override
     public void createItem(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {

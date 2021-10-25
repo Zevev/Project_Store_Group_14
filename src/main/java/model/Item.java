@@ -68,8 +68,10 @@ public class Item {
 
 
 
-    @Override
+    /*@Override
     public String toString() {
         return "Varen heter " + getItemName() + " og er av typen " + getItemType() + ". Denne varen koster: " + getItemPrice();
-    }
+    }*/
+
+
 }
