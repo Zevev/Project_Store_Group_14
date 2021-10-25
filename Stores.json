@@ -1,0 +1,19 @@
+[ {
+  "storeID" : 1,
+  "storeName" : "Halden Store",
+  "items" : [ {
+    "itemID" : 1,
+    "storeName" : "Halden Store",
+    "itemName" : "Fin Vase",
+    "itemType" : "Vase",
+    "itemPictureURL" : "BildeURL",
+    "itemPrice" : 299.99
+  }, {
+    "itemID" : 2,
+    "storeName" : "Halden Store",
+    "itemName" : "A item",
+    "itemType" : "THe Item Type",
+    "itemPictureURL" : "URL",
+    "itemPrice" : 999.99
+  } ]
+} ]

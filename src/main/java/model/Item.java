@@ -1,18 +1,19 @@
 package model;
 
 public class Item {
-    private int itemID, itemStore;
-    private String itemName, itemType, itemPictureURL;
+    private int itemID;
+    private String storeName,itemName, itemType, itemPictureURL;
     private double itemPrice;
 
-    public Item(int itemID, int itemStore, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+    public Item(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         this.itemID = itemID;
-        this.itemStore = itemStore;
+        this.storeName = storeName;
         this.itemName = itemName;
         this.itemType = itemType;
         this.itemPictureURL = itemPictureURL;
         this.itemPrice = itemPrice;
     }
+
     public Item(){
 
     }
@@ -25,12 +26,12 @@ public class Item {
         this.itemID = itemID;
     }
 
-    public int getItemStore() {
-        return itemStore;
+    public String getStoreName() {
+        return storeName;
     }
 
-    public void setItemStore(int itemStore) {
-        this.itemStore = itemStore;
+    public void setStoreName(String storeName) {
+        this.storeName = storeName;
     }
 
     public String getItemName() {

@@ -12,13 +12,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         List<Item> items = new ArrayList<>();
+        List<Store> stores = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        Item Vase = new Item(1,1,"Kola","Vase","FintBildet",299.99);
+        Item Vase = new Item(1,"Halden Store", "Fin Vase", "Vase", "BildeURL", 299.99);
+        Item anotherItem = new Item(2,"Halden Store", "A item", "THe Item Type", "URL", 999.99);
         items.add(Vase);
+        items.add(anotherItem);
         Store store = new Store(1,"Halden Store",items);
+        stores.add(store);
         User user = new User("UserName", "PassWord");
+        writeToJson("Stores.json",stores);
 
-        System.out.println("ItemID: ");
+        /*System.out.println("ItemID: ");
         String itemId = sc.next();
         int newItemID = Integer.valueOf(itemId);
         System.out.println("ItemStore: ");
@@ -36,19 +41,19 @@ public class Main {
         items.add(new Item(newItemID,newItemStore,ItemName,itemType, pictureURL,newItemPrice));
         writeToJson("items.json", items);
 
-        System.out.println(items);
+        System.out.println(items);*/
 
 
 
 
     }
-    public static void writeToJson(String filename, List<Item> items) {
+    public static void writeToJson(String filename, List<Store> stores) {
         try {
             File file = new File(filename);
             ObjectMapper objectMapper = new ObjectMapper();
 
 
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, items);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, stores);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Store {
@@ -16,6 +17,23 @@ public class Store {
     public Store() {
 
     }
+    public void addItem(Item item){
+        items.add(item);
+    }
+
+    public Item getItem(String itemName){
+        for(Item item : items){
+            if(item.getItemName().equals(itemName)){
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public List<Item> getItems() {
+        return new ArrayList<Item>(items);
+    }
+    public void removeItem(Item item){items.remove(item);}
 
     public int getStoreID() {
         return storeID;
@@ -33,9 +51,6 @@ public class Store {
         this.storeName = storeName;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
 
     public void setItems(List<Item> items) {
         this.items = items;
