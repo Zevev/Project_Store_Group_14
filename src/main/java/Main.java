@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         List<Item> items = new ArrayList<>();
         List<Store> stores = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
+
         Item Vase = new Item(1,"Halden Store", "Fin Vase", "Vase", "BildeURL", 299.99);
         Item anotherItem = new Item(2,"Halden Store", "A item", "THe Item Type", "URL", 999.99);
         items.add(Vase);
