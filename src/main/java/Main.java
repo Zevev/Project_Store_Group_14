@@ -68,12 +68,93 @@ public class Main {
         }
         return null;
     }
+
+
+
+
     public static List<Store> getAllStores() {
         return readFromJSON("Stores.JSON");
     }
+
+
+    public static Item getAItem(String storeName, String itemName) {
+        return getAStore(storeName).getItem(itemName);
+
+    }
+
 
     public static List<Item> items(String storeName) {
         return getAStore(storeName).getItems();
 
     }
+
+
+    public static List<Item> getAllItems() {
+        List<Store> stores = new ArrayList<>(getAllStores());
+        List<Item> allItems = new ArrayList<>();
+        for (Store stores1 : stores){
+            List<Item>currentItemList = items(stores1.getStoreName());
+            for(Item items : currentItemList){
+                allItems.add(items);
+            }
+        }
+        return allItems;
+    }
+
+
+    public static Item getAItemWithoutStoreName(String itemName) {
+        List<Store> stores = new ArrayList<>(getAllStores());
+        List<Item> allItems = new ArrayList<>();
+        for (Store stores1 : stores){
+            List<Item>currentItemList = items(stores1.getStoreName());
+            for(Item items : currentItemList){
+                if (items.getItemName().equals(itemName)){
+                    return items;
+                }
+            }
+        }
+        return null;
+    }
+
+
+
+    public static void createItem(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+        List<Store> stores = new ArrayList<>(getAllStores());
+        for(Store stores1 : stores){
+            if(storeName.equals(stores1.getStoreName())) {
+                stores1.addItem(new Item(itemID, storeName, itemName, itemType, itemPictureURL, itemPrice));
+            }
+        }
+        writeToJson("Stores.json", stores);
+    }
+
+
+
+    public static void updateItem(int itemID,String currentItemName, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+        List<Store> stores = new ArrayList<>(getAllStores());
+        for(Store stores1 : stores){
+            if(storeName.equals(stores1.getStoreName())){
+                stores1.getItem(currentItemName).setItemName(itemName);
+                stores1.getItem(itemName).setItemType(itemType);
+                stores1.getItem(itemName).setItemPictureURL(itemPictureURL);
+                stores1.getItem(itemName).setItemPrice(itemPrice);
+            }
+        }
+        writeToJson("Store.json", stores);
+    }
+
+
+
+    public static void removeItem(String storeName, String itemName) {
+        List<Store> stores = new ArrayList<>(getAllStores());
+        for(Store stores1 : stores){
+            for(Store stores2 : stores){
+                if(storeName.equals(stores2.getStoreName())){
+                    stores2.removeItem(stores2.getItem(itemName));
+                }
+            }
+        }
+        writeToJson("Store.json", stores);
+    }
+
 }
