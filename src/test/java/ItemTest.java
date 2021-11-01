@@ -43,19 +43,7 @@ public class ItemTest {
         assertNotNull(Main.getAItemWithoutStoreName("A item"));
     }
 
-    @Test
-    public void Get_A_Store_Using_A_Store_Name(){
-        assertNotNull(Main.getAStore("Halden Store"));
-    }
 
-    @Test
-    public void Get_All_Stores(){
-        List<Store> stores = new ArrayList<>();
-        stores = Main.getAllStores();
-        for(Store stores1 : stores){
-            assertNotNull(stores1);
-        }
-    }
 
 
 
