@@ -2,15 +2,15 @@ package model;
 
 public class Item {
     private int itemID;
-    private String storeName,itemName, itemType, itemPictureURL;
+    private String storeName, name, itemType, pictureUrl;
     private double itemPrice;
 
-    public Item(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+    public Item(int itemID, String storeName, String name, String itemType, String pictureUrl, double itemPrice) {
         this.itemID = itemID;
         this.storeName = storeName;
-        this.itemName = itemName;
+        this.name = name;
         this.itemType = itemType;
-        this.itemPictureURL = itemPictureURL;
+        this.pictureUrl = pictureUrl;
         this.itemPrice = itemPrice;
     }
 
@@ -34,12 +34,12 @@ public class Item {
         this.storeName = storeName;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getItemType() {
@@ -50,12 +50,12 @@ public class Item {
         this.itemType = itemType;
     }
 
-    public String getItemPictureURL() {
-        return itemPictureURL;
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 
-    public void setItemPictureURL(String itemPictureURL) {
-        this.itemPictureURL = itemPictureURL;
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     public double getItemPrice() {
@@ -68,10 +68,10 @@ public class Item {
 
 
 
-    /*@Override
+    @Override
     public String toString() {
-        return "Varen heter " + getItemName() + " og er av typen " + getItemType() + ". Denne varen koster: " + getItemPrice();
-    }*/
+        return String.format(getName(), getItemType(), getItemPrice());
+    }
 
 
 }

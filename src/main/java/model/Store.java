@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Store {
     private int storeID;
-    private String storeName;
+    private String name;
     private List<Item> items;
 
-    public Store(int storeID, String storeName, List<Item> items) {
+    public Store(int storeID, String name, List<Item> items) {
         this.storeID = storeID;
-        this.storeName = storeName;
+        this.name = name;
         this.items = items;
     }
 
@@ -23,7 +23,7 @@ public class Store {
 
     public Item getItem(String itemName){
         for(Item item : items){
-            if(item.getItemName().equals(itemName)){
+            if(item.getName().equals(itemName)){
                 return item;
             }
         }
@@ -43,12 +43,12 @@ public class Store {
         this.storeID = storeID;
     }
 
-    public String getStoreName() {
-        return storeName;
+    public String getName() {
+        return name;
     }
 
-    public void setStoreName(String storeName) {
-        this.storeName = storeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
 
@@ -58,7 +58,7 @@ public class Store {
 
     @Override
     public String toString() {
-        return "Butikken heter " + getStoreName() + " og har en liste med varer som er " + getItems();
+        return "Butikken heter " + getName() + " og har en liste med varer som er " + getItems();
     }
     //return String.format("%s has %d planets that revolve around the star %s", name, planets.size(), centerStar.getName());
 }

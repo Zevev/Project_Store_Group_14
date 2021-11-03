@@ -1,19 +1,55 @@
 [ {
   "storeID" : 1,
-  "storeName" : "Halden Store",
+  "name" : "Halden Store",
   "items" : [ {
     "itemID" : 1,
     "storeName" : "Halden Store",
-    "itemName" : "Fin Vase",
+    "name" : "Fin Vase",
     "itemType" : "Vase",
-    "itemPictureURL" : "BildeURL",
+    "pictureUrl" : "https://images.finncdn.no/dynamic/1280w/2017/11/vertical-5/19/0/108/894/_1302427749.jpg",
     "itemPrice" : 299.99
   }, {
     "itemID" : 2,
     "storeName" : "Halden Store",
-    "itemName" : "A item",
+    "name" : "A item",
     "itemType" : "THe Item Type",
-    "itemPictureURL" : "URL",
+    "pictureUrl" : "https://cdn.starwebserver.se/shops/sekelskifte/files/122-807-a.jpg",
     "itemPrice" : 999.99
+  } ]
+}, {
+  "storeID" : 2,
+  "name" : "Generic store name",
+  "items" : [ {
+    "itemID" : 3,
+    "storeName" : "Generic store name",
+    "name" : "Antikk",
+    "itemType" : "Kopp",
+    "pictureUrl" : "https://www.antiquaethodierna.no/users/antiquaethod_mystore_no/images/31659_Liten_kopp_og_sk_l_med_trykt_dekor_1.jpg",
+    "itemPrice" : 4.0
+  }, {
+    "itemID" : 4,
+    "storeName" : "Generic store name",
+    "name" : "Gjenstand",
+    "itemType" : "Gaffel",
+    "pictureUrl" : "https://trv.no/app/uploads/sites/4/2020/10/antikk-gaffel-2-stk-scaled.jpg",
+    "itemPrice" : 15.0
+  } ]
+}, {
+  "storeID" : 3,
+  "name" : "Antique store",
+  "items" : [ {
+    "itemID" : 5,
+    "storeName" : "Antique store",
+    "name" : "Antikk gjenstand",
+    "itemType" : "Kopp",
+    "pictureUrl" : "https://www.antiquaethodierna.no/users/antiquaethod_mystore_no/images/31659_Liten_kopp_og_sk_l_med_trykt_dekor_1.jpg",
+    "itemPrice" : 7.0
+  }, {
+    "itemID" : 6,
+    "storeName" : "Antique store",
+    "name" : "Gjenstand",
+    "itemType" : "TIng",
+    "pictureUrl" : "https://cdn.starwebserver.se/shops/sekelskifte/files/122-807-a.jpg",
+    "itemPrice" : 24.0
   } ]
 } ]

@@ -7,21 +7,40 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import static repository.SiteRepository.readFromJSON;
 
 public class Main {
     public static void main(String[] args) {
         List<Item> items = new ArrayList<>();
+        List<Item> items1 = new ArrayList<>();
+        List<Item> items2 = new ArrayList<>();
         List<Store> stores = new ArrayList<>();
 
         Item Vase = new Item(1,"Halden Store", "Fin Vase", "Vase", "BildeURL", 299.99);
         Item anotherItem = new Item(2,"Halden Store", "A item", "THe Item Type", "URL", 999.99);
+
+        Item antikk = new Item(3,"Generic store name", "Antikk", "Kopp", "BildeURL", 4);
+        Item antikk1 = new Item(4,"Generic store name", "Gjenstand", "Gaffel", "URL", 15);
+
+        Item gjenstand = new Item(5,"Antique store", "Antikk gjenstand", "Kopp", "BildeURL", 7);
+        Item gjenstand1 = new Item(6,"Antique store", "Gjenstand", "TIng", "URL", 24);
+
         items.add(Vase);
         items.add(anotherItem);
+
+        items1.add(antikk);
+        items1.add(antikk1);
+
+        items2.add(gjenstand);
+        items2.add(gjenstand1);
+
         Store store = new Store(1,"Halden Store",items);
+        Store store1 = new Store(2,"Generic store name",items1);
+        Store store2 = new Store(3,"Antique store",items2);
         stores.add(store);
+        stores.add(store1);
+        stores.add(store2);
         User user = new User("UserName", "PassWord");
         writeToJson("Stores.json",stores);
 
@@ -46,7 +65,8 @@ public class Main {
         System.out.println(items);*/
 
 
-
+        System.out.println(getAllStores());
+        System.out.println(items("Halden Store"));
 
     }
     public static void writeToJson(String filename, List<Store> stores) {
@@ -62,7 +82,7 @@ public class Main {
     }
     public static Store getAStore(String storeName) {
         for(Store store : getAllStores()){
-            if(store.getStoreName().equals(storeName)) {
+            if(store.getName().equals(storeName)) {
                 return store;
             }
         }
@@ -93,7 +113,7 @@ public class Main {
         List<Store> stores = new ArrayList<>(getAllStores());
         List<Item> allItems = new ArrayList<>();
         for (Store stores1 : stores){
-            List<Item>currentItemList = items(stores1.getStoreName());
+            List<Item>currentItemList = items(stores1.getName());
             for(Item items : currentItemList){
                 allItems.add(items);
             }
@@ -106,9 +126,9 @@ public class Main {
         List<Store> stores = new ArrayList<>(getAllStores());
         List<Item> allItems = new ArrayList<>();
         for (Store stores1 : stores){
-            List<Item>currentItemList = items(stores1.getStoreName());
+            List<Item>currentItemList = items(stores1.getName());
             for(Item items : currentItemList){
-                if (items.getItemName().equals(itemName)){
+                if (items.getName().equals(itemName)){
                     return items;
                 }
             }
@@ -121,7 +141,7 @@ public class Main {
     public static void createItem(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
-            if(storeName.equals(stores1.getStoreName())) {
+            if(storeName.equals(stores1.getName())) {
                 stores1.addItem(new Item(itemID, storeName, itemName, itemType, itemPictureURL, itemPrice));
             }
         }
@@ -133,10 +153,10 @@ public class Main {
     public static void updateItem(int itemID,String currentItemName, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
-            if(storeName.equals(stores1.getStoreName())){
-                stores1.getItem(currentItemName).setItemName(itemName);
+            if(storeName.equals(stores1.getName())){
+                stores1.getItem(currentItemName).setName(itemName);
                 stores1.getItem(itemName).setItemType(itemType);
-                stores1.getItem(itemName).setItemPictureURL(itemPictureURL);
+                stores1.getItem(itemName).setPictureUrl(itemPictureURL);
                 stores1.getItem(itemName).setItemPrice(itemPrice);
             }
         }
@@ -149,7 +169,7 @@ public class Main {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
             for(Store stores2 : stores){
-                if(storeName.equals(stores2.getStoreName())){
+                if(storeName.equals(stores2.getName())){
                     stores2.removeItem(stores2.getItem(itemName));
                 }
             }

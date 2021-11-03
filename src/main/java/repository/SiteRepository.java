@@ -11,13 +11,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SiteRepository implements ISiteRepository {
+    private String filename;
 
-    public static List<Store> readFromJSON(String filnavn) {
+    public SiteRepository(String filename) {
+        this.filename = filename;
+    }
+
+    public static List<Store> readFromJSON(String filename) {
         List<Store> stores = new ArrayList<>();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
 
-            Store[] storeArray = objectMapper.readValue(new File(filnavn), Store[].class);
+            Store[] storeArray = objectMapper.readValue(new File(filename), Store[].class);
 
             stores = Arrays.asList(storeArray);
         } catch (IOException e) {
@@ -42,7 +47,7 @@ public class SiteRepository implements ISiteRepository {
     @Override
     public Store getAStore(String storeName) {
         for(Store store : getAllStores()){
-            if(store.getStoreName().equals(storeName)) {
+            if(store.getName().equals(storeName)) {
                 return store;
             }
         }
@@ -73,7 +78,7 @@ public class SiteRepository implements ISiteRepository {
         List<Store> stores = new ArrayList<>(getAllStores());
         List<Item> allItems = new ArrayList<>();
         for (Store stores1 : stores){
-            List<Item>currentItemList = items(stores1.getStoreName());
+            List<Item>currentItemList = items(stores1.getName());
             for(Item items : currentItemList){
                 allItems.add(items);
             }
@@ -86,9 +91,9 @@ public class SiteRepository implements ISiteRepository {
         List<Store> stores = new ArrayList<>(getAllStores());
         List<Item> allItems = new ArrayList<>();
         for (Store stores1 : stores){
-            List<Item>currentItemList = items(stores1.getStoreName());
+            List<Item>currentItemList = items(stores1.getName());
             for(Item items : currentItemList){
-                if (items.getItemName().equals(itemName)){
+                if (items.getName().equals(itemName)){
                     return items;
                 }
             }
@@ -101,7 +106,7 @@ public class SiteRepository implements ISiteRepository {
     public void createItem(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
-            if(storeName.equals(stores1.getStoreName())) {
+            if(storeName.equals(stores1.getName())) {
                 stores1.addItem(new Item(itemID, storeName, itemName, itemType, itemPictureURL, itemPrice));
             }
         }
@@ -113,10 +118,10 @@ public class SiteRepository implements ISiteRepository {
     public void updateItem(int itemID,String currentItemName, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
-            if(storeName.equals(stores1.getStoreName())){
-                stores1.getItem(currentItemName).setItemName(itemName);
+            if(storeName.equals(stores1.getName())){
+                stores1.getItem(currentItemName).setName(itemName);
                 stores1.getItem(itemName).setItemType(itemType);
-                stores1.getItem(itemName).setItemPictureURL(itemPictureURL);
+                stores1.getItem(itemName).setPictureUrl(itemPictureURL);
                 stores1.getItem(itemName).setItemPrice(itemPrice);
             }
         }
@@ -129,7 +134,7 @@ public class SiteRepository implements ISiteRepository {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
             for(Store stores2 : stores){
-                if(storeName.equals(stores2.getStoreName())){
+                if(storeName.equals(stores2.getName())){
                     stores2.removeItem(stores2.getItem(itemName));
                 }
             }
@@ -141,7 +146,7 @@ public class SiteRepository implements ISiteRepository {
     public void removeStore(String storeName){
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
-            if(storeName.equals(stores1.getStoreName())){
+            if(storeName.equals(stores1.getName())){
                 stores.remove(stores1);
             }
         }

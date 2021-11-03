@@ -12,19 +12,19 @@ public class StoreController {
     private SiteRepository siteRepository;
 
     public StoreController(SiteRepository siteRepository) {
-        this.siteRepository = new SiteRepository();
+        this.siteRepository = new SiteRepository("Stores.json");
     }
     public void createStore(Context context){
         // method for create store //
     }
 
-    public void getAStore(@NotNull Context context) {
-        String storeName = context.pathParam("storeID");
+    public void getAStore(Context context) {
+        String storeName = context.pathParam("store-id");
         context.json(siteRepository.getAStore(storeName));
     }
     public void getAllStores(@NotNull Context context){
         context.json(siteRepository.getAllStores());
-        String sortBy = context.queryParam("sort_by");
+        //String sortBy = context.queryParam("sort_by");
         // sort function here//
     }
     public void  getAItem(@NotNull Context context){
