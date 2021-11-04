@@ -23,9 +23,9 @@ public class Store {
 
     public Item getItem(String itemName){
         for(Item item : items){
-            if(item.getName().equals(itemName)){
+            if(item.getName().equals(itemName))
                 return item;
-            }
+
         }
         return null;
     }

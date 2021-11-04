@@ -7,8 +7,8 @@
             {{console.log(this.store)}}
 
             <h1>{{store.name}}</h1>
-            <p>The {{store.name}} has  planets revolving around the star {{store.name}}.</p>
-            <p><a class="button" class="add" :href="`/stores/${store.name}/createplanet`">Create New Store</a></p>
+            <p>Info about {{store.name}}.</p>
+            <p><a class="button" class="add" :href="`/stores/${store.name}/createitem`">Create New Item</a></p>
         </div>
 
         <ul id="sortList">

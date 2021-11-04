@@ -2,6 +2,7 @@ package controller;
 
 import model.Item;
 import model.Store;
+import org.jetbrains.annotations.NotNull;
 import repository.ISiteRepository;
 import repository.SiteRepository;
 import io.javalin.http.Context;
@@ -25,11 +26,12 @@ private ISiteRepository siteRepository;
     }
 
     public void getSpecificItem(Context context){
-        String itemName = context.pathParam("");
-        String storeName = context.pathParam("");
+        String storeName = context.pathParam("store-id");
+        String itemName = context.pathParam("item-id");
+        Item item = new Item();
+        item = siteRepository.getAItem(storeName, itemName);
 
-        Item itemInfo = siteRepository.getAItem(storeName, itemName);
-        context.json(itemInfo);
+        context.json(item);
     }
 
     public void getAllItems(Context context){

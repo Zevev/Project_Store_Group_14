@@ -17,14 +17,14 @@ public class Main {
         List<Item> items2 = new ArrayList<>();
         List<Store> stores = new ArrayList<>();
 
-        Item Vase = new Item(1,"Halden Store", "Fin Vase", "Vase", "BildeURL", 299.99);
-        Item anotherItem = new Item(2,"Halden Store", "A item", "THe Item Type", "URL", 999.99);
+        Item Vase = new Item(1,"Halden Store", "Fin Vase", "Vase", "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg", 299.99);
+        Item anotherItem = new Item(2,"Halden Store", "A item", "THe Item Type", "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg", 97.9);
 
-        Item antikk = new Item(3,"Generic store name", "Antikk", "Kopp", "BildeURL", 4);
-        Item antikk1 = new Item(4,"Generic store name", "Gjenstand", "Gaffel", "URL", 15);
+        Item antikk = new Item(3,"Generic store name", "Antikk", "Kopp", "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg", 4);
+        Item antikk1 = new Item(4,"Generic store name", "Gjenstand", "Gaffel", "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg", 15);
 
-        Item gjenstand = new Item(5,"Antique store", "Antikk gjenstand", "Kopp", "BildeURL", 7);
-        Item gjenstand1 = new Item(6,"Antique store", "Gjenstand", "TIng", "URL", 24);
+        Item gjenstand = new Item(5,"Antique store", "Antikk gjenstand", "Kopp", "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg", 7);
+        Item gjenstand1 = new Item(6,"Antique store","Gjenstand", "TIng", "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg", 24);
 
         items.add(Vase);
         items.add(anotherItem);
@@ -67,6 +67,9 @@ public class Main {
 
         System.out.println(getAllStores());
         System.out.println(items("Halden Store"));
+        System.out.println("Getting a item " + getAItem("Halden Store", "A item"));
+        getAItem("Halden Store", "A item");
+
 
     }
     public static void writeToJson(String filename, List<Store> stores) {

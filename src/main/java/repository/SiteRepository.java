@@ -63,7 +63,13 @@ public class SiteRepository implements ISiteRepository {
 
     @Override
     public Item getAItem(String storeName, String itemName) {
-        return getAStore(storeName).getItem(itemName);
+        try {
+            return getAStore(storeName).getItem(itemName);
+        }
+        catch(NullPointerException e) {
+            System.out.println("NullPointerException thrown!");
+        }
+        return null;
 
     }
 

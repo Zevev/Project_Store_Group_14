@@ -2,8 +2,9 @@ package model;
 
 public class Item {
     private int itemID;
-    private String storeName, name, itemType, pictureUrl;
+    private String  storeName, name, itemType, pictureUrl;
     private double itemPrice;
+
 
     public Item(int itemID, String storeName, String name, String itemType, String pictureUrl, double itemPrice) {
         this.itemID = itemID;
@@ -14,8 +15,7 @@ public class Item {
         this.itemPrice = itemPrice;
     }
 
-    public Item(){
-
+    public Item() {
     }
 
     public int getItemID() {
@@ -70,7 +70,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return String.format(getName(), getItemType(), getItemPrice());
+        return String.format(name, storeName, itemType, pictureUrl, itemPrice);
     }
 
 
