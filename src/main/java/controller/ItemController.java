@@ -51,7 +51,11 @@ private ISiteRepository siteRepository;
 
     }
 
-    public void deleteItems(){
+    public void deleteItems(Context context){
+        String storeName = context.pathParam("store-id");
+        String itemName = context.pathParam("item-id");
+
+        siteRepository.removeItem(storeName, itemName);
 
     }
 

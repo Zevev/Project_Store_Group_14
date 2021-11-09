@@ -58,7 +58,7 @@ public class SiteRepository implements ISiteRepository {
 
     @Override
     public List<Store> getAllStores() {
-        return readFromJSON("Stores.JSON");
+        return readFromJSON("Store.JSON");
     }
 
     @Override
@@ -116,7 +116,7 @@ public class SiteRepository implements ISiteRepository {
                 stores1.addItem(new Item(itemID, storeName, itemName, itemType, itemPictureURL, itemPrice));
             }
         }
-        writeToJson("Stores.json", stores);
+        writeToJson("Store.json", stores);
     }
 
 

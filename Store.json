@@ -1,0 +1,55 @@
+[ {
+  "storeID" : 1,
+  "name" : "Halden Store",
+  "items" : [ {
+    "itemID" : 1,
+    "storeName" : "Halden Store",
+    "name" : "Fin Vase",
+    "itemType" : "Vase",
+    "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
+    "itemPrice" : 299.99
+  }, {
+    "itemID" : 2,
+    "storeName" : "Halden Store",
+    "name" : "A item",
+    "itemType" : "THe Item Type",
+    "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
+    "itemPrice" : 97.9
+  } ]
+}, {
+  "storeID" : 2,
+  "name" : "Generic store name",
+  "items" : [ {
+    "itemID" : 3,
+    "storeName" : "Generic store name",
+    "name" : "Antikk",
+    "itemType" : "Kopp",
+    "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
+    "itemPrice" : 4.0
+  }, {
+    "itemID" : 4,
+    "storeName" : "Generic store name",
+    "name" : "Gjenstand",
+    "itemType" : "Gaffel",
+    "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
+    "itemPrice" : 15.0
+  } ]
+}, {
+  "storeID" : 3,
+  "name" : "Antique store",
+  "items" : [ {
+    "itemID" : 5,
+    "storeName" : "Antique store",
+    "name" : "Antikk gjenstand",
+    "itemType" : "Kopp",
+    "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
+    "itemPrice" : 7.0
+  }, {
+    "itemID" : 6,
+    "storeName" : "Antique store",
+    "name" : "Gjenstand",
+    "itemType" : "TIng",
+    "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
+    "itemPrice" : 24.0
+  } ]
+} ]

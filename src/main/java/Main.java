@@ -42,7 +42,7 @@ public class Main {
         stores.add(store1);
         stores.add(store2);
         User user = new User("UserName", "PassWord");
-        writeToJson("Stores.json",stores);
+        writeToJson("Store.json",stores);
 
         /*System.out.println("ItemID: ");
         String itemId = sc.next();

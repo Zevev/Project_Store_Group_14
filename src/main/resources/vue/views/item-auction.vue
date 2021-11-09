@@ -1,25 +1,19 @@
-<template id="item-detail">
+<template id="item-auction">
     <div v-if="item" class="detail-item-container">
         {{console.log(this.item)}}
         <h1>{{item.name}}</h1>
         <img v-if="item.pictureUrl" class="cover-image" v-bind:src="item.pictureUrl">
         <img v-else class="cover-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png">
 
-        <p>The item is called {{item.name}} and is sold by {{item.storeName}}.
-            The item is of type {{item.itemType}},
-            and costs: {{item.itemPrice}}
-        .</p>
+        <p>{{item.name}} has been bought!
+            .</p>
         <p>Dummy text</p>
-        <p>
-            <a class="button" :href="`/api/stores/${storeName}/items/${item.name}/delete`">Delete</a>
-            <a class="button" :href="`/stores/${storeName}/items/${item.name}/update`">Edit</a>
-            <a class="button" :href="`/stores/${storeName}/items/${item.name}/auction`">Purchase</a>
-        </p>
+
     </div>
 </template>
 <script>
-    Vue.component("item-detail", {
-        template: "#item-detail",
+    Vue.component("item-auction", {
+        template: "#item-auction",
         data: () => ({
             item: null,
             storeName: "",
@@ -33,6 +27,7 @@
                 .then(res => res.json())
                 .then(res => this.item = res)
                 .catch(() => alert("Error while fetching item"));
+            fetch(`/api/stores/${storeId}/items/${itemId}/auction`)
         }
     });
 </script>
