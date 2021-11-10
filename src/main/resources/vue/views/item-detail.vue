@@ -11,7 +11,7 @@
         .</p>
         <p>Dummy text</p>
         <p>
-            <a class="button" :href="`/api/stores/${storeName}/items/${item.name}/delete`">Delete</a>
+            <a class="button" :href="`/stores/${storeName}/items/${item.name}/bid`">Bid on the item</a>
             <a class="button" :href="`/stores/${storeName}/items/${item.name}/update`">Edit</a>
             <a class="button" :href="`/stores/${storeName}/items/${item.name}/auction`">Purchase</a>
         </p>

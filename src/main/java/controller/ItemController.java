@@ -58,7 +58,12 @@ private ISiteRepository siteRepository;
 
     }
 
-    public void updateItems(){
+    public void bidItem(Context context){
+        String storeName = context.pathParam("store-id");
+        String itemName = context.pathParam("item-id");
+        String itemPrice = context.formParam("itemPrice");
+        siteRepository.bidItem(storeName,itemName,Double.parseDouble(itemPrice));
+        context.redirect("/stores/" + storeName + "/items/" + itemName + "/bid");
 
     }
 

@@ -136,6 +136,16 @@ public class SiteRepository implements ISiteRepository {
         writeToJson("Store.json", stores);
     }
 
+    @Override
+    public void bidItem(String storeName, String itemName, double itemPrice){
+        List<Store> stores = new ArrayList<>(getAllStores());
+        for(Store stores1 : stores){
+            if(storeName.equals(stores1.getName())){
+                stores1.getItem(itemName).setItemPrice(itemPrice);
+            }
+        }
+        writeToJson("Store.json", stores);
+    }
 
     @Override
     public void removeItem(String storeName, String itemName) {

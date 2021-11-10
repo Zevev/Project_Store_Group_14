@@ -23,6 +23,7 @@ public class Application {
         app.get("/stores/:store-id/items/:item-id", new VueComponent("item-detail"));
         app.get("/stores/:store-id/createitem", new VueComponent("item-create"));
         app.get("/stores/:store-id/items/:item-id/auction", new VueComponent("item-auction"));
+        app.get("/stores/:store-id/items/:item-id/bid", new VueComponent("item-bid"));
 
         app.get("api/stores", storeController::getAllStores);
         app.get("api/stores/allitems", itemController::getAllItems);
@@ -31,6 +32,7 @@ public class Application {
         app.get("api/stores/:store-id/items/:item-id", itemController::getSpecificItem);
         app.get("api/stores/:store-id/items/:item-id/auction", itemController::deleteItems);
         app.post("api/stores/:store-id/createitem", itemController::createItem);
+        app.post("api/stores/:store-id/items/:item-id/bid", itemController::bidItem);
         app.get("api/stores/:store-id/items/:item-id/delete", itemController::deleteItems);
     }
 }

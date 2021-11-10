@@ -14,6 +14,7 @@ public interface ISiteRepository {
     Item getAItemWithoutStoreName(String itemName);
     void createItem( String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice);
     void updateItem(int itemID, String currentItemName,String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice);
+    void bidItem(String storeName, String itemName, double itemPrice);
     void removeItem(String storeName, String itemName);
     void removeStore(String storeName);
 }
