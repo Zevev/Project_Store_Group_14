@@ -24,6 +24,7 @@ public class Application {
         app.get("/stores/:store-id/items/:item-id/auction", new VueComponent("item-auction"));
 
         app.get("api/stores", storeController::getAllStores);
+        app.get("api/stores/allitems", itemController::getAllItems);
         app.get("api/stores/:store-id", storeController::getAStore);
         app.get("api/stores/:store-id/items", itemController::getItems);
         app.get("api/stores/:store-id/items/:item-id", itemController::getSpecificItem);

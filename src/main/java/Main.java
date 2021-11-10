@@ -35,9 +35,9 @@ public class Main {
         items2.add(gjenstand);
         items2.add(gjenstand1);
 
-        Store store = new Store(1,"Halden Store",items);
-        Store store1 = new Store(2,"Generic store name",items1);
-        Store store2 = new Store(3,"Antique store",items2);
+        Store store = new Store(1,"Halden Store","Halden",items);
+        Store store1 = new Store(2,"Generic store name","Oslo",items1);
+        Store store2 = new Store(3,"Antique store","Bergen",items2);
         stores.add(store);
         stores.add(store1);
         stores.add(store2);
@@ -64,11 +64,6 @@ public class Main {
 
         System.out.println(items);*/
 
-
-        System.out.println(getAllStores());
-        System.out.println(items("Halden Store"));
-        System.out.println("Getting a item " + getAItem("Halden Store", "A item"));
-        getAItem("Halden Store", "A item");
 
 
     }

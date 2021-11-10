@@ -1,6 +1,7 @@
 [ {
   "storeID" : 1,
   "name" : "Halden Store",
+  "location" : "Halden",
   "items" : [ {
     "itemID" : 1,
     "storeName" : "Halden Store",
@@ -19,6 +20,7 @@
 }, {
   "storeID" : 2,
   "name" : "Generic store name",
+  "location" : "Oslo",
   "items" : [ {
     "itemID" : 3,
     "storeName" : "Generic store name",
@@ -37,6 +39,7 @@
 }, {
   "storeID" : 3,
   "name" : "Antique store",
+  "location" : "Bergen",
   "items" : [ {
     "itemID" : 5,
     "storeName" : "Antique store",

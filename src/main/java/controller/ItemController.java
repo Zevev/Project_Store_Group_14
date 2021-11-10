@@ -35,10 +35,7 @@ private ISiteRepository siteRepository;
     }
 
     public void getAllItems(Context context){
-        String itemName = context.pathParam("");
-        String storeName = context.pathParam("");
-
-        List<Item> itemList = siteRepository.items(storeName);
+        List<Item> itemList = siteRepository.getAllItems();
         context.json(itemList);
     }
 

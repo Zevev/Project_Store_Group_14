@@ -5,12 +5,13 @@ import java.util.List;
 
 public class Store {
     private int storeID;
-    private String name;
+    private String name , location;
     private List<Item> items;
 
-    public Store(int storeID, String name, List<Item> items) {
+    public Store(int storeID, String name, String location, List<Item> items) {
         this.storeID = storeID;
         this.name = name;
+        this.location = location;
         this.items = items;
     }
 
@@ -51,6 +52,13 @@ public class Store {
         this.name = name;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public void setItems(List<Item> items) {
         this.items = items;
