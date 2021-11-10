@@ -109,8 +109,10 @@ public class SiteRepository implements ISiteRepository {
 
 
     @Override
-    public void createItem(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+    public void createItem( String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
+        List<Item> items = new ArrayList<>(getAllItems());
+        int itemID = items.size()+1;
         for(Store stores1 : stores){
             if(storeName.equals(stores1.getName())) {
                 stores1.addItem(new Item(itemID, storeName, itemName, itemType, itemPictureURL, itemPrice));

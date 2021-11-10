@@ -54,5 +54,12 @@
     "itemType" : "TIng",
     "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
     "itemPrice" : 24.0
+  }, {
+    "itemID" : 7,
+    "storeName" : "Antique store",
+    "name" : "Name",
+    "itemType" : "Type",
+    "pictureUrl" : "https://i.pinimg.com/originals/cd/43/c1/cd43c186729dea89d16f7bbe03e434ec.jpg",
+    "itemPrice" : 2.99
   } ]
 } ]

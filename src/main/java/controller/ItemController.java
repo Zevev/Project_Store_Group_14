@@ -39,13 +39,15 @@ private ISiteRepository siteRepository;
         context.json(itemList);
     }
 
-    public void addItems(Context context){
-        /*int itemID = context.formParam("");
-        String itemName = context.pathParam("");
+    public void createItem(Context context){
+       String storeName = context.pathParam("store-id");
+       String itemName = context.formParam("name");
+       String itemType = context.formParam("itemType");
+       String pictureUrl = context.formParam("pictureUrl");
+       String itemPrice = context.formParam("itemPrice");
+       siteRepository.createItem(storeName,itemName,itemType,pictureUrl,Double.parseDouble(itemPrice));
 
-        Item newItem = siteRepository.createItem(itemName);*/
-
-
+        context.redirect("/stores/" + storeName);
     }
 
     public void deleteItems(Context context){

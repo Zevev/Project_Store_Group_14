@@ -1,6 +1,6 @@
 <template id="store-detail">
     <div class="content-wrapper">
-        <div class="grid">
+        <div class="gridStore">
         <div v-if="store" class="detail-store-container">
             <img v-if="store.pictureUrl" class="cover-image" v-bind:src="store.pictureUrl">
             <img v-else class="cover-image" src="https://i.pinimg.com/originals/cd/43/c1/cd43c186729dea89d16f7bbe03e434ec.jpg">
@@ -27,7 +27,7 @@
                         <img v-if="item.pictureUrl" class="list-image" v-bind:src="item.pictureUrl" style="float: left">
                         <img v-else class="list-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png" style="float: left">
                         <p>
-                            Info about the item!
+                            Type: {{item.itemType}}. Price: {{item.itemPrice}}
                         </p>
                     </div>
                 </a>
@@ -65,7 +65,7 @@
 </script>
 <style>
 
-    .grid {
+    .gridStore {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
