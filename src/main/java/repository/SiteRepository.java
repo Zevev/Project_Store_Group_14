@@ -141,7 +141,10 @@ public class SiteRepository implements ISiteRepository {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
             if(storeName.equals(stores1.getName())){
-                stores1.getItem(itemName).setItemPrice(itemPrice);
+
+                if(stores1.getItem(itemName).getItemPrice() < itemPrice){
+                    stores1.getItem(itemName).setItemPrice(itemPrice);
+                }
             }
         }
         writeToJson("Store.json", stores);

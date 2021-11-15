@@ -8,7 +8,7 @@
 
         <p>Price of {{item.name}} is {{item.itemPrice}}
             </p>
-        <p>Dummy text</p>
+        <p>If the price of the item doesnt change, your bid is too low!</p>
     </div>
         <div class="form-style">
             <h2>Current bid: {{item.itemPrice}} nok.</h2>
