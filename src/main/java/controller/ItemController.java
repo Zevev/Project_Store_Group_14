@@ -7,8 +7,10 @@ import repository.ISiteRepository;
 import repository.SiteRepository;
 import io.javalin.http.Context;
 
-import java.util.ArrayList;
+import java.util.*;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class ItemController {
@@ -19,8 +21,23 @@ private ISiteRepository siteRepository;
 
     public void getItems(Context context){
         String storeName = context.pathParam("store-id");
+        String sortBy = context.queryParam("sort_by");
 
-        List<Item> items = siteRepository.items(storeName);
+        List<Item> items = new ArrayList<>(siteRepository.items(storeName));
+        /*if (sortBy != null) {
+            switch (sortBy) {
+                case "name":
+                    items = items.stream().sorted().collect(Collectors.toList());
+
+                    break;
+                case "type":
+
+                    break;
+                case "price":
+                    items.sort((o1, o2) -> (int) (o1.getItemPrice() - o2.getItemPrice()));
+                    break;
+            }
+        }*/
 
         context.json(items);
     }
@@ -48,6 +65,16 @@ private ISiteRepository siteRepository;
        siteRepository.createItem(storeName,itemName,itemType,pictureUrl,Double.parseDouble(itemPrice));
 
         context.redirect("/stores/" + storeName);
+    }
+
+    public void updateItem(Context context){
+        String storeName = context.pathParam("store-id");
+        String itemName = context.formParam("name");
+        String itemType = context.formParam("itemType");
+        String pictureUrl = context.formParam("pictureUrl");
+        String itemPrice = context.formParam("itemPrice");
+        siteRepository.updateItem(itemName,storeName,itemName,itemType,pictureUrl,Double.parseDouble(itemPrice));
+        context.redirect("/stores/" + storeName + "/items/" + itemName);
     }
 
     public void deleteItems(Context context){

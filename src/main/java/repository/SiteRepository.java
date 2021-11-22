@@ -123,7 +123,7 @@ public class SiteRepository implements ISiteRepository {
 
 
     @Override
-    public void updateItem(int itemID,String currentItemName, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+    public void updateItem(String currentItemName, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
             if(storeName.equals(stores1.getName())){

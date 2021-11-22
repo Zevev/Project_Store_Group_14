@@ -14,8 +14,8 @@
 
         <ul id="sortList">
             <li><a v-if="sorting" :href="`/stores/${store.name}?sort_by=name`">Sort alphabetically</a></li>
-            <li><a v-if="sorting" :href="`/stores/${store.name}?sort_by=mass`">Sort by type</a></li>
-            <li><a v-if="sorting" :href="`/stores/${store.name}?sort_by=num`">Sort by price</a></li>
+            <li><a v-if="sorting" :href="`/stores/${store.name}?sort_by=type`">Sort by type</a></li>
+            <li><a v-if="sorting" :href="`/stores/${store.name}?sort_by=price`">Sort by price</a></li>
 
         </ul>
 

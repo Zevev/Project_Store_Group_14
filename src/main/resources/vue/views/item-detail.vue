@@ -8,7 +8,7 @@
         <p>The item is called {{item.name}} and is sold by {{item.storeName}}.
             The item is of type {{item.itemType}},
             and costs: {{item.itemPrice}}
-        .</p>
+        </p>
         <p>Dummy text</p>
         <ul>
         <li class="list">
