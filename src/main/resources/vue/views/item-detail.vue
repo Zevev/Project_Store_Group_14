@@ -10,11 +10,13 @@
             and costs: {{item.itemPrice}}
         .</p>
         <p>Dummy text</p>
-        <p>
+        <ul>
+        <li class="list">
             <a class="button" :href="`/stores/${storeName}/items/${item.name}/bid`">Bid on the item</a>
             <a class="button" :href="`/stores/${storeName}/items/${item.name}/update`">Edit</a>
             <a class="button" :href="`/stores/${storeName}/items/${item.name}/auction`">Purchase</a>
-        </p>
+        </li>
+        </ul>
     </div>
 </template>
 <script>
@@ -39,6 +41,11 @@
 <style>
     ul{
         color:white;
+    }
+
+    .list{
+        list-style-type: none;
+        display: grid;
     }
     div.detail-item-container > p {
         max-width: 30em;
