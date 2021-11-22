@@ -19,6 +19,7 @@ public class Application {
         ItemController itemController = new ItemController(siteRepository);
 
         app.get("/stores", new VueComponent("store-overview"));
+        app.get("/purchase", new VueComponent("purchase"));
         app.get("/stores/:store-id", new VueComponent("store-detail"));
         app.get("/stores/:store-id/items/:item-id", new VueComponent("item-detail"));
         app.get("/stores/:store-id/createitem", new VueComponent("item-create"));

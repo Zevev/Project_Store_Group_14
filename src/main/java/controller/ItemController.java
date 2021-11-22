@@ -10,6 +10,7 @@ import io.javalin.http.Context;
 import java.util.*;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 
@@ -82,6 +83,12 @@ private ISiteRepository siteRepository;
         String itemName = context.pathParam("item-id");
 
         siteRepository.removeItem(storeName, itemName);
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+        }
+        context.redirect("/purchase/");
 
     }
 
