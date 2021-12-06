@@ -5,10 +5,10 @@
   "items" : [ {
     "itemID" : 1,
     "storeName" : "Halden Store",
-    "name" : "Fin Vase",
-    "itemType" : "Vase",
+    "name" : "NY vase",
+    "itemType" : "type vase",
     "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
-    "itemPrice" : 6.99
+    "itemPrice" : 2.0
   }, {
     "itemID" : 2,
     "storeName" : "Halden Store",
@@ -16,6 +16,13 @@
     "itemType" : "THe Item Type",
     "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
     "itemPrice" : 97.9
+  }, {
+    "itemID" : 7,
+    "storeName" : "Halden Store",
+    "name" : "Test Item",
+    "itemType" : "TEst Type",
+    "pictureUrl" : "TestURL",
+    "itemPrice" : 1.0
   } ]
 }, {
   "storeID" : 2,
@@ -27,7 +34,7 @@
     "name" : "Antikk",
     "itemType" : "Kopp",
     "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
-    "itemPrice" : 6.0
+    "itemPrice" : 4.0
   }, {
     "itemID" : 4,
     "storeName" : "Generic store name",
@@ -41,18 +48,18 @@
   "name" : "Antique store",
   "location" : "Bergen",
   "items" : [ {
+    "itemID" : 5,
+    "storeName" : "Antique store",
+    "name" : "Antikk gjenstand",
+    "itemType" : "Kopp",
+    "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
+    "itemPrice" : 7.0
+  }, {
     "itemID" : 6,
     "storeName" : "Antique store",
     "name" : "Gjenstand",
     "itemType" : "TIng",
     "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
     "itemPrice" : 24.0
-  }, {
-    "itemID" : 7,
-    "storeName" : "Antique store",
-    "name" : "Name",
-    "itemType" : "Type",
-    "pictureUrl" : "https://i.pinimg.com/originals/cd/43/c1/cd43c186729dea89d16f7bbe03e434ec.jpg",
-    "itemPrice" : 2.99
   } ]
 } ]

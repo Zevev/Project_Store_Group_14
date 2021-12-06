@@ -9,7 +9,7 @@
             The item is of type {{item.itemType}},
             and costs: {{item.itemPrice}}
         </p>
-        <p>Dummy text</p>
+        <p>If you dont see changes, refresh the page!</p>
         <ul>
         <li class="list">
             <a class="button" :href="`/stores/${storeName}/items/${item.name}/bid`">Bid on the item</a>

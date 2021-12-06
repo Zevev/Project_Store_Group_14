@@ -6,6 +6,7 @@ import model.User;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static repository.SiteRepository.readFromJSON;
@@ -78,6 +79,22 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    public static List<Store> readFromJSON(String filename) {
+        List<Store> stores = new ArrayList<>();
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            Store[] storeArray = objectMapper.readValue(new File(filename), Store[].class);
+
+            stores = Arrays.asList(storeArray);
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+
+        return stores;
+    }
+
     public static Store getAStore(String storeName) {
         for(Store store : getAllStores()){
             if(store.getName().equals(storeName)) {
@@ -91,7 +108,7 @@ public class Main {
 
 
     public static List<Store> getAllStores() {
-        return readFromJSON("Stores.JSON");
+        return readFromJSON("Safety.json");
     }
 
 
@@ -136,19 +153,21 @@ public class Main {
 
 
 
-    public static void createItem(int itemID, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+    public static void createItem(String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
+        List<Item> items = new ArrayList<>(getAllItems());
+        int itemID = items.size()+1;
         for(Store stores1 : stores){
             if(storeName.equals(stores1.getName())) {
                 stores1.addItem(new Item(itemID, storeName, itemName, itemType, itemPictureURL, itemPrice));
             }
         }
-        writeToJson("Stores.json", stores);
+        writeToJson("Safety.json", stores);
     }
 
 
 
-    public static void updateItem(int itemID,String currentItemName, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
+    public static void updateItem(String currentItemName, String storeName, String itemName, String itemType, String itemPictureURL, double itemPrice) {
         List<Store> stores = new ArrayList<>(getAllStores());
         for(Store stores1 : stores){
             if(storeName.equals(stores1.getName())){
@@ -158,9 +177,10 @@ public class Main {
                 stores1.getItem(itemName).setItemPrice(itemPrice);
             }
         }
-        writeToJson("Store.json", stores);
-    }
+        writeToJson("Safety.json", stores);
 
+
+    }
 
 
     public static void removeItem(String storeName, String itemName) {
@@ -172,7 +192,32 @@ public class Main {
                 }
             }
         }
-        writeToJson("Store.json", stores);
+        writeToJson("Safety.json", stores);
+    }
+
+    public static void bidItem(String storeName, String itemName, double itemPrice){
+        List<Store> stores = new ArrayList<>(getAllStores());
+        for(Store stores1 : stores){
+            if(storeName.equals(stores1.getName())){
+
+                if(stores1.getItem(itemName).getItemPrice() < itemPrice){
+                    stores1.getItem(itemName).setItemPrice(itemPrice);
+                }
+            }
+        }
+        writeToJson("Safety.json", stores);
+    }
+
+
+    public static void removeStore(String storeName){
+        List<Store> stores = new ArrayList<>(getAllStores());
+        for(Store stores1 : stores){
+            if(storeName.equals(stores1.getName())){
+                stores.remove(stores1);
+            }
+        }
+
+        writeToJson("Safety.json", stores);
     }
 
 }

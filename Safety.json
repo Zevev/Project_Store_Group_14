@@ -1,13 +1,14 @@
 [ {
   "storeID" : 1,
   "name" : "Halden Store",
+  "location" : "Halden",
   "items" : [ {
     "itemID" : 1,
     "storeName" : "Halden Store",
-    "name" : "Fin Vase",
-    "itemType" : "Vase",
+    "name" : "NY vase",
+    "itemType" : "type vase",
     "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
-    "itemPrice" : 299.99
+    "itemPrice" : 2.0
   }, {
     "itemID" : 2,
     "storeName" : "Halden Store",
@@ -15,10 +16,18 @@
     "itemType" : "THe Item Type",
     "pictureUrl" : "https://m.media-amazon.com/images/I/81Ee8D2PkTS._AC_UL320_.jpg",
     "itemPrice" : 97.9
+  }, {
+    "itemID" : 7,
+    "storeName" : "Halden Store",
+    "name" : "Test Item",
+    "itemType" : "TEst Type",
+    "pictureUrl" : "TestURL",
+    "itemPrice" : 1.0
   } ]
 }, {
   "storeID" : 2,
   "name" : "Generic store name",
+  "location" : "Oslo",
   "items" : [ {
     "itemID" : 3,
     "storeName" : "Generic store name",
@@ -37,6 +46,7 @@
 }, {
   "storeID" : 3,
   "name" : "Antique store",
+  "location" : "Bergen",
   "items" : [ {
     "itemID" : 5,
     "storeName" : "Antique store",

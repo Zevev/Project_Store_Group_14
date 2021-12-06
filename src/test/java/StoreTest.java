@@ -22,4 +22,21 @@ public class StoreTest {
             assertNotNull(stores1);
         }
     }
+
+    @Test
+    public void Remove_A_Store_With_Store_Name(){
+         boolean storeExists = true;
+         List<Store> stores = new ArrayList<>(Main.readFromJSON("Safety.json"));
+        Store tempSave =  Main.getAStore("Halden Store");
+        Main.removeStore("Halden Store");
+        for(Store store : stores){
+            if(store.getName() != "Halden Store"){
+
+                storeExists = false;
+            }
+        }
+        stores.add(tempSave);
+        Main.writeToJson("Safety.json",stores);
+        //assertFalse(storeExists);
+    }
 }

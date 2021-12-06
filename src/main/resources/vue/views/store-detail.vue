@@ -9,6 +9,7 @@
 
             <h1>{{store.name}}</h1>
             <p>Info about {{store.name}}.</p>
+            <p>If you dont see changes, refresh the page!</p>
             <p><a class="button" class="add" :href="`/stores/${store.name}/createitem`">Create New Item</a></p>
         </div>
 

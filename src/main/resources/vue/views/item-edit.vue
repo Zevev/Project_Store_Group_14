@@ -1,7 +1,7 @@
 <template id="item-edit" @item-submitted="editItem">
     <div class="form-style">
         <h2>Edit item {{item.name}} in the store {{storeName}}</h2>
-        <form class="create" @submit="checkForm" :action=`/api/stores/${storeName}/updateitem` method="post">
+        <form class="create" @submit="checkForm" :action=`/api/stores/${storeName}/items/${item.name}/updateitem` method="post">
             <div v-if="errors.length">
                 <b>Please correct the following error(s):</b>
                 <ul>
@@ -13,21 +13,21 @@
 
             <p>
                 <label for="name">Name<label>
-                    <input type="text" name="name" id="name" v-model="item.name">
+                    <input type="text" name="name" id="name" v-model="name">
             </p>
 
             <p>
                 <label for="itemType">Type of the item<label>
-                    <input type="text" name="itemType" id="itemType" v-model="item.itemType">
+                    <input type="text" name="itemType" id="itemType" v-model="itemType">
             </p>
 
             <p>
                 <label for="pictureUrl">Url for item picture<label>
-                    <input type="url" name="pictureUrl" id="pictureUrl" v-model="item.pictureUrl">
+                    <input type="url" name="pictureUrl" id="pictureUrl" v-model="pictureUrl">
             </p>
             <p>
                 <label for="itemPrice">Price of the item<label>
-                    <input type="number" step="0.000001" name="itemPrice" id="itemPrice" v-model="item.itemPrice" min="0">
+                    <input type="number" step="0.000001" name="itemPrice" id="itemPrice" v-model="itemPrice" min="0">
             </p>
 
 

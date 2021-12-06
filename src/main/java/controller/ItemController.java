@@ -69,12 +69,13 @@ private ISiteRepository siteRepository;
     }
 
     public void updateItem(Context context){
+        String currenItemName = context.pathParam("item-id");
         String storeName = context.pathParam("store-id");
         String itemName = context.formParam("name");
         String itemType = context.formParam("itemType");
         String pictureUrl = context.formParam("pictureUrl");
         String itemPrice = context.formParam("itemPrice");
-        siteRepository.updateItem(itemName,storeName,itemName,itemType,pictureUrl,Double.parseDouble(itemPrice));
+        siteRepository.updateItem(currenItemName,storeName,itemName,itemType,pictureUrl,Double.parseDouble(itemPrice));
         context.redirect("/stores/" + storeName + "/items/" + itemName);
     }
 
