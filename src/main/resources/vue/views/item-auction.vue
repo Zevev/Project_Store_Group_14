@@ -3,7 +3,7 @@
         {{console.log(this.item)}}
         <h1>{{item.name}}</h1>
         <img v-if="item.pictureUrl" class="cover-image" v-bind:src="item.pictureUrl">
-        <img v-else class="cover-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png">
+        <img v-else class="cover-image" src="https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png">
 
         <p>{{item.name}} has been bought!
             .</p>
