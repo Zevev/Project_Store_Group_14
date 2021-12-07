@@ -3,7 +3,7 @@
         {{console.log(this.item)}}
         <h1>{{item.name}}</h1>
         <img v-if="item.pictureUrl" class="cover-image" v-bind:src="item.pictureUrl">
-        <img v-else class="cover-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png">
+        <img v-else class="cover-image" src=https://scottgramantiques.com/wp-content/uploads/2019/04/professional-1.png">
 
         <p>The item is called {{item.name}} and is sold by {{item.storeName}}.
             The item is of type {{item.itemType}},
